@@ -40,7 +40,7 @@ usersRouter.patch(
       delete user.password;
       return response.json(user);
     } catch (error) {
-      return response.status(404).json({ error: error.message });
+      return response.status(error.statusCode).json({ error: error.message });
     }
   },
 );
